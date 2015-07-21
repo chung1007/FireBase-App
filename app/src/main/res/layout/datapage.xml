@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="150dp"
+       android:text = "name of key:"
+       android:textColor="#000000"
+       android:textSize="20dp"
+       android:id="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/keyName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint = "type here"
+        android:layout_marginTop="190dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Message:"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:layout_marginTop="250dp"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:id="@+id/Message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:hint = "type here"/>
+
+    <ImageView
+       android:layout_width="150px"
+       android:layout_height="150px"
+       android:src="@drawable/view"
+       android:onClick="View"
+       android:clickable="true"
+       android:id="@+id/View"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentStart="true"
+       android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Submit"
+        android:id="@+id/Submit"
+        android:onClick="Submit"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
