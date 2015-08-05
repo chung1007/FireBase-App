@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".LinkAccountInfo">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:id="@+id/submit"
+        android:onClick="SUBMIT"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/writingPage"
+        android:layout_alignEnd="@+id/writingPage" />
+
+     <EditText
+         android:id="@+id/dbxPath"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:hint = "Dxb Path: "
+         android:layout_marginTop="260sp"/>
+
+     <EditText
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/writingPage"
+         android:hint="Text: "
+         android:inputType="textMultiLine"
+         android:layout_centerVertical="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/delete"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="delete"/>
+
+    <ImageView
+        android:id="@+id/dropBoxPic"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:src="@drawable/dropbox"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:onClick="dropBoxLink"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/search"
+        android:onClick="searchClick"
+        android:layout_alignTop="@+id/dropBoxPic"
+        android:layout_alignLeft="@+id/submit"
+        android:layout_alignStart="@+id/submit" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/Unlink"
+        android:onClick="unLink"/>
+
+
+</RelativeLayout>

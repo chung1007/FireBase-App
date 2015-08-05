@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Homework1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Button1">This</string>
+    <string name="redText">Hello</string>
+    <string name="redText2">Program</string>
+    
+</resources>
