@@ -1,7 +1,9 @@
 ///////////Created by: Sam.Chung/////////
 //////////July 2nd, 2015////////////////
 package com.example.sam.firebaseapp;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,22 +11,41 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.firebase.client.Firebase;
 
 public class MainActivity extends ActionBarActivity {
+    private SharedPreferences savedUrl;
+    EditText url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
-
+        url = (EditText)findViewById(R.id.Url);
+        savedUrl = getSharedPreferences("notes",MODE_PRIVATE);
+        url.setText(savedUrl.getString("tag", url.getText().toString()));
     }
+
+    private void makeTag(String tag){
+        String or = savedUrl.getString(tag, null);
+        SharedPreferences.Editor preferencesEditor =savedUrl.edit();
+        preferencesEditor.putString("tag",tag); //change this line to this
+        preferencesEditor.commit();
+    }
+
     public void Save(View v) {
 
-        Toast.makeText(this, "Url Saved", Toast.LENGTH_SHORT).show();
+        if (url.getText().length() > 0) {
+            makeTag(url.getText().toString());
+
+            ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(url.getWindowToken(), 0);
+
+            Toast.makeText(this, "Url Saved", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -37,7 +58,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void nextClicked(View view) {
-       EditText url = (EditText) findViewById(R.id.Url);
         Intent next = new Intent(this, dataPage.class);
         next.putExtra("userUrl", url.getText().toString());
         startActivity(next);
