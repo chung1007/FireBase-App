@@ -9,7 +9,7 @@
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_marginTop="150dp"
+       android:layout_marginTop="100dp"
        android:text = "name of key:"
        android:textColor="#000000"
        android:textSize="20dp"
@@ -20,7 +20,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint = "@string/type"
-        android:layout_below="@+id/textView2"
+        android:layout_marginTop="140dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:inputType="text"/>
@@ -31,14 +31,14 @@
         android:text = "Message:"
         android:textSize="20dp"
         android:textColor="#000000"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="210dp"
         android:id="@+id/textView" />
 
     <EditText
         android:id="@+id/Message"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         android:hint = "@string/type"
         android:inputType="textMultiLine"/>
 
@@ -63,8 +63,7 @@
         android:onClick="Submit"
         android:clickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/secondLogo"
-        android:layout_alignStart="@+id/secondLogo" />
+        android:layout_centerInParent="true" />
 
     <ImageView
         android:id="@+id/nextEdit"
@@ -78,8 +77,8 @@
 
     <ImageView
         android:id="@+id/secondLogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:src="@drawable/firebassecondlogo"/>

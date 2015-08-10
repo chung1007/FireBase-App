@@ -10,10 +10,10 @@
         android:id="@+id/firebaseLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:src="@drawable/firebaselogo"
-        android:layout_centerInParent="true"
-        android:onClick="fireBase"/>
+        android:onClick="fireBase"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
 
     <TextView
         android:id="@+id/textView1"
@@ -22,14 +22,14 @@
         android:text = "Your Firebase url:"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="100dp"
         android:textColor="#000000"/>
 
     <EditText
         android:id="@+id/Url"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="225dp"
+        android:layout_marginTop="150dp"
         android:hint = "@string/type"
         android:inputType="textUri" />
 
@@ -48,7 +48,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Forgot Url?"
         android:textStyle="italic"
-        android:textSize="12dp"
+        android:textSize="13dp"
         android:id="@+id/Forgot"
         android:layout_marginTop="30dp"
         android:onClick="forgotClicked"
@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="/ clear"
+        android:text="/clear"
         android:onClick="Clear"
         android:clickable="true"
         android:id="@+id/clear"
