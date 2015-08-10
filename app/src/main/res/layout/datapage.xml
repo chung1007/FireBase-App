@@ -19,8 +19,11 @@
         android:id="@+id/keyName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint = "type here"
-        android:layout_marginTop="190dp"/>
+        android:hint = "@string/type"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,27 +39,49 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:hint = "type here"/>
+        android:hint = "@string/type"
+        android:inputType="textMultiLine"/>
 
     <ImageView
-       android:layout_width="150px"
-       android:layout_height="150px"
+       android:layout_width="170px"
+       android:layout_height="170px"
        android:src="@drawable/view"
        android:onClick="View"
        android:clickable="true"
        android:id="@+id/View"
-       android:layout_alignParentLeft="true"
-       android:layout_alignParentStart="true"
-       android:layout_alignParentBottom="true" />
+        android:layout_alignTop="@+id/Submit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="150px"
-        android:layout_height="100px"
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Submit"
+        android:textSize="35px"
         android:id="@+id/Submit"
         android:onClick="Submit"
         android:clickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignLeft="@+id/secondLogo"
+        android:layout_alignStart="@+id/secondLogo" />
+
+    <ImageView
+        android:id="@+id/nextEdit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/next"
+        android:onClick="secondNext"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/secondLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/firebassecondlogo"/>
+
 </RelativeLayout>

@@ -1,62 +1,36 @@
-///////////Created by: Sam.Chung/////////
-//////////July 2nd, 2015////////////////
 package com.example.sam.firebaseapp;
+
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.firebase.client.Firebase;
+//https://www.firebase.com/docs/web/guide/understanding-data.html
 
-public class MainActivity extends ActionBarActivity {
-
+public class retrieveData extends ActionBarActivity {
+    Intent newNext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Firebase.setAndroidContext(this);
+        setContentView(R.layout.retrieve_data);
+       newNext = getIntent();
 
-    }
-    public void Save(View v) {
 
-        Toast.makeText(this, "Url Saved", Toast.LENGTH_SHORT).show();
     }
 
 
-    public void fireBase(View view){
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://www.firebase.com/signup/"));
-        startActivity(intent);
-    }
-
-    public void nextClicked(View view) {
-       EditText url = (EditText) findViewById(R.id.Url);
-        Intent next = new Intent(this, dataPage.class);
-        next.putExtra("userUrl", url.getText().toString());
-        startActivity(next);
-
-        Log.e("clicked", "next");
-    }
-
-    public void forgotClicked(View view){
-        Intent forgot = new Intent();
-        forgot.setAction(Intent.ACTION_VIEW);
-        forgot.addCategory(forgot.CATEGORY_BROWSABLE);
-        forgot.setData(Uri.parse("https://www.firebase.com/login/"));
-        startActivity(forgot);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
