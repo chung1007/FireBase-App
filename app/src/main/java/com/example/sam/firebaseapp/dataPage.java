@@ -52,7 +52,6 @@ public class dataPage extends ActionBarActivity {
 
         Firebase.setAndroidContext(this);
         Firebase myFirebaseRef = new Firebase(userUrl);
-        myFirebaseRef.child("secondMessage").setValue("Hello World");
         myFirebaseRef.child(userKey).setValue(userMessage);
         Context context = this.getApplicationContext();
         CharSequence success = "Message sent";

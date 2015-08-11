@@ -18,16 +18,17 @@ import com.firebase.client.Firebase;
 
 public class MainActivity extends ActionBarActivity {
     private SharedPreferences savedUrl;
-    EditText url;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
-        url = (EditText)findViewById(R.id.Url);
+        EditText url = (EditText)findViewById(R.id.Url);
         savedUrl = getSharedPreferences("notes",MODE_PRIVATE);
         url.setText(savedUrl.getString("tag", url.getText().toString()));
+
     }
 
     private void makeTag(String tag){
@@ -38,14 +39,22 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void Save(View v) {
-
+        EditText url = (EditText)findViewById(R.id.Url);
         if (url.getText().length() > 0) {
             makeTag(url.getText().toString());
-
+            url.setText(savedUrl.getString("tag", url.getText().toString()));
             ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(url.getWindowToken(), 0);
 
             Toast.makeText(this, "Url Saved", Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    public void Clear(View view) {
+        EditText url = (EditText)findViewById(R.id.Url);
+        url.setText("");
+        url.setHint("type here");
+        Toast.makeText(this, "Url cleared", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -58,6 +67,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void nextClicked(View view) {
+        EditText url = (EditText)findViewById(R.id.Url);
         Intent next = new Intent(this, dataPage.class);
         next.putExtra("userUrl", url.getText().toString());
         startActivity(next);
