@@ -11,20 +11,56 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 //https://www.firebase.com/docs/web/guide/understanding-data.html
 
 public class retrieveData extends ActionBarActivity {
-    Intent newNext;
+    String userUrl;
+    String userKey;
+    Firebase myFirebaseRef;
+    EditText messageEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.retrieve_data);
-       newNext = getIntent();
-
+       Intent newNext = getIntent();
+        Firebase.setAndroidContext(this);
+        userUrl = newNext.getStringExtra("userUrl");
+        userKey = newNext.getStringExtra("userKey");
+        myFirebaseRef = new Firebase(userUrl);
+        messageEdit = (EditText)findViewById(R.id.editTextBox);
 
     }
 
+    public void pickKeyClicked(View view){
+        myFirebaseRef.child(userKey).addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                messageEdit.setText(snapshot.getValue().toString());
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError error) {
+            }
+        });
+    }
+
+    public void editSubmitClicked(View view){
+        EditText keyEdit = (EditText)findViewById(R.id.editKey);
+        myFirebaseRef.child(keyEdit.getText().toString()).setValue(messageEdit.getText().toString());
+        Context context = this.getApplicationContext();
+        CharSequence success = "Message edited";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, success, duration);
+        toast.show();
+        messageEdit.setText(" ");
+    }
 
 
     @Override

@@ -93,9 +93,22 @@ public class dataPage extends ActionBarActivity {
         startActivity(viewPage);
     }
 
-    public void secondNext(View view){
-        Intent newNext = new Intent(this, retrieveData.class);
-        startActivity(newNext);
+    public void secondNext(View view) {
+
+        if (userUrl.equals("")) {
+            Context context = this.getApplicationContext();
+            CharSequence warning = "Type in your Url";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, warning, duration);
+            toast.show();
+        } else {
+            EditText key = (EditText) findViewById(R.id.keyName);
+            String userKey = key.getText().toString();
+            Intent newNext = new Intent(this, retrieveData.class);
+            newNext.putExtra("userUrl", userUrl);
+            newNext.putExtra("userKey", userKey);
+            startActivity(newNext);
+        }
     }
 
     @Override

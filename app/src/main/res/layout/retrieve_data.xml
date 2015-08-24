@@ -4,9 +4,15 @@
     android:layout_height="match_parent"
     android:id="@+id/retrieveData">
 
-
+    <ImageView
+        android:id="@+id/secondLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/firebassecondlogo"/>
     <TextView
-        android:layout_width="200dp"
+        android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Retrieve/Edit Data"
@@ -15,19 +21,70 @@
         android:id="@+id/retrieveDataHeading"
         android:layout_marginLeft="30dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="110dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Key Name:"
+        android:textColor="#000000"
         android:id="@+id/textView3"
         android:layout_below="@+id/retrieveDataHeading"
         android:layout_alignLeft="@+id/retrieveDataHeading"
         android:layout_alignStart="@+id/retrieveDataHeading" />
+
+    <EditText
+        android:id="@+id/editKey"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint = "Type here"
+        android:layout_marginTop="200dp"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:inputType="textMultiLine"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Editing Box"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/editKey"
+        android:layout_alignStart="@+id/editKey"
+        android:id="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/editTextBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pick key"
+        android:id="@+id/pickKey"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="pickKeyClicked"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/editSubmit"
+        android:layout_alignTop="@+id/pickKey"
+        android:layout_alignRight="@+id/editTextBox"
+        android:layout_alignEnd="@+id/editTextBox"
+        android:onClick="editSubmitClicked"/>
 
 </RelativeLayout>
