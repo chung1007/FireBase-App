@@ -8,8 +8,10 @@ import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -112,3 +114,8 @@ public class MainActivity extends ActionBarActivity {
         myFirebaseRef.child("users/schung/name").setValue("Sam Chung");
         */
 //Log.e("testing", "works?");
+
+
+/*////////////////////////////////////////////////*/
+
+

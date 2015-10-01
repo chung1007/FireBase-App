@@ -22,6 +22,8 @@ public class retrieveData extends ActionBarActivity {
     String userKey;
     Firebase myFirebaseRef;
     EditText messageEdit;
+    EditText editKey;
+    String editKeyName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,8 @@ public class retrieveData extends ActionBarActivity {
         userKey = newNext.getStringExtra("userKey");
         myFirebaseRef = new Firebase(userUrl);
         messageEdit = (EditText)findViewById(R.id.editTextBox);
+        editKey = (EditText)findViewById(R.id.editKey);
+        editKeyName = editKey.getText().toString();
 
     }
 
@@ -41,7 +45,7 @@ public class retrieveData extends ActionBarActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
 
-                messageEdit.setText(snapshot.getValue().toString());
+                messageEdit.setText(snapshot.child(editKeyName).getValue().toString());
 
             }
 

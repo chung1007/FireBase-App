@@ -86,5 +86,5 @@
         android:layout_alignRight="@+id/editTextBox"
         android:layout_alignEnd="@+id/editTextBox"
         android:onClick="editSubmitClicked"/>
-
+/
 </RelativeLayout>
